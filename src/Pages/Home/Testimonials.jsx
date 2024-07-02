@@ -1,8 +1,8 @@
-import testimonials from "../../data/testimonials";
-import { FaStar } from "react-icons/fa";
+import testimonials from "../../Data/testimonials";
+import { FaThumbsUp } from "react-icons/fa";
 import React from "react";
 
-const Testmoy = ({ image, name, country, heading, description }) => {
+const Testmoy = ({ image, name, heading, description }) => {
   return (
     <section className="testmoy">
       <div className="testmoyTop">
@@ -11,13 +11,8 @@ const Testmoy = ({ image, name, country, heading, description }) => {
         </div>
         <div className="testmoyTopdetails">
           <h2>Name: {name}</h2>
-          <p>Nation: {country}</p>
           <p className="rate">
-            Rating: <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />{" "}
+            Rating: <FaThumbsUp />
           </p>
         </div>
       </div>

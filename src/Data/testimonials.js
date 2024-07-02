@@ -8,51 +8,45 @@ import person5 from "../assets/male7.jpg";
 const testimonials = [
   {
     image: person,
-    name: " Sarah M.",
-    country: "USA",
-    heading: "An Unforgettable Adventure",
+    name: "Jane M",
+    heading: "Exceptional Service",
     description:
-      "Zaph Tours exceeded all my expectations! The guides were incredibly knowledgeable and friendly, making every moment of the trip exciting and informative.",
+      "BebaBeba made my trip seamless. The booking process was easy, the car was clean, and customer service was outstanding. Highly recommend their service!",
   },
   {
     image: person1,
-    name: "Rajiv P.",
-    country: "India",
-    heading: "Exceptional Service and Experience",
+    name: "David K.",
+    heading: "Reliable and Affordable",
     description:
-      "From start to finish, Zaph Tours provided outstanding service. The seamless organization and attention to detail made our vacation stress-free and enjoyable. ",
+      "I rented from BebaBeba for a business trip. The rates were unbeatable, and the car was in perfect condition. Will definitely use them again. ",
   },
   {
     image: person2,
-    name: " Sarah M.",
-    country: "USA",
-    heading: "An Unforgettable Adventure",
+    name: "Aisha L.",
+    heading: "Smooth Experience",
     description:
-      "Zaph Tours exceeded all my expectations! The guides were incredibly knowledgeable and friendly, making every moment of the trip exciting and informative.",
+      "From pick-up to drop-off, everything was hassle-free with BebaBeba. Their staff was friendly and helpful, making my rental experience truly enjoyable.",
   },
   {
     image: person3,
     name: "Rajiv P.",
-    country: "India",
     heading: "Exceptional Service and Experience",
     description:
-      "From start to finish, Zaph Tours provided outstanding service. The seamless organization and attention to detail made our vacation stress-free and enjoyable. ",
+    "From pick-up to drop-off, everything was hassle-free with BebaBeba. Their staff was friendly and helpful, making my rental experience truly enjoyable.",
   },
   {
     image: person4,
     name: " Emily R.",
-    country: "Australia",
     heading: "A Journey to Remember",
     description:
-      "Traveling with Zaph Tours was a dream come true. The tailored itinerary perfectly matched our interests, and the guides brought each location to life with their stories and expertise.",
+     "I rented from BebaBeba for a business trip. The rates were unbeatable, and the car was in perfect condition. Will definitely use them again. ",
   },
   {
     image: person5,
     name: " Carlos M.",
-    country: "Spain",
-    heading: "Best Tour Company Ever!",
+    heading: "Best Travelling Company Ever!",
     description:
-      "I have traveled with many tour companies, but Zaph Tours stands out as the best. The level of personal attention and care was unparalleled.",
+    "BebaBeba made my trip seamless. The booking process was easy, the car was clean, and customer service was outstanding. Highly recommend their service!",
   },
 ];
 
