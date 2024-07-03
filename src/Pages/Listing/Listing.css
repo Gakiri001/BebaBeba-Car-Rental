@@ -101,7 +101,6 @@
 @media screen and (max-width: 64.375em) {
   .ListingFather{
     width: 100%;
-    margin: 1rem;
   }
 }
 @media screen and (max-width: 50.625em) {
@@ -116,9 +115,6 @@
   }
 }
 @media screen and (max-width: 36.25em) {
-  .ListingFather{
-    padding: 0;
-  }
   .ListingFather .Listcard{
     justify-content: center;
     align-items: center;
