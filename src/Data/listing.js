@@ -1,0 +1,86 @@
+import car1 from "../assets/car1.jpg"
+
+const list =[
+  {
+    image: car1,
+    VehicleName: "Toyota Corolla",
+    Category: "Sedan",
+    Transmission: "Automatic",
+    FuelType: "Petrol",
+    Seats: 5,
+    AirConditioning: "Yes",
+    DailyRate: "$50",
+  },
+  {
+    image: car1,
+    VehicleName: "Ford Explorer",
+    Category: "SUV",
+    Transmission: "Automatic",
+    FuelType: "Petrol",
+    Seats: 7,
+    AirConditioning: "Yes",
+    DailyRate: "$80",
+  },
+  {
+    image: car1,
+    VehicleName: "Honda Civic",
+    Category: "Sedan",
+    Transmission: "Automatic",
+    FuelType: "Petrol",
+    Seats: 5,
+    AirConditioning: "Yes",
+    DailyRate: "$55",
+  },
+  {
+    image: car1,
+    VehicleName: "Chevrolet Suburban",
+    Category: "SUV",
+    Transmission: "Automatic",
+    FuelType: "Petrol",
+    Seats: 8,
+    AirConditioning: "Yes",
+    DailyRate: "$90",
+  },
+  {
+    image: car1,
+    VehicleName: "Hyundai Elantra",
+    Category: "Sedan",
+    Transmission: "Automatic",
+    FuelType: "Petrol",
+    Seats: 5,
+    AirConditioning: "Yes",
+    DailyRate: "$45",
+  },
+  {
+    image: car1,
+    VehicleName: "Jeep Grand Cherokee",
+    Category: "SUV",
+    Transmission: "Automatic",
+    FuelType: "Petrol",
+    Seats: 5,
+    AirConditioning: "Yes",
+    DailyRate: "$85",
+  },
+  {
+    image: car1,
+    VehicleName: "Mazda CX-5",
+    Category: "SUV",
+    Transmission: "Automatic",
+    FuelType: "Petrol",
+    Seats: 5,
+    AirConditioning: "Yes",
+    DailyRate: "$70",
+  },
+  {
+    image: car1,
+    VehicleName: "Nissan Altima",
+    Category: "Sedan",
+    Transmission: "Automatic",
+    FuelType: "Petrol",
+    Seats: 5,
+    AirConditioning: "Yes",
+    DailyRate: "$60"
+  }
+]
+
+export default list;

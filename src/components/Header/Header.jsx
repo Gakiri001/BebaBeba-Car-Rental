@@ -16,7 +16,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link className="HeaderLink" to="/">
+            <Link className="HeaderLink" to="/Listing">
               Listing
             </Link>
           </li>
