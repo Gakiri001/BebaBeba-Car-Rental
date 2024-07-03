@@ -165,7 +165,7 @@
 .aboutus .aboutusRight p {
   line-height: 1.5rem;
 }
-@media screen and (max-width: 38.75em) {
+@media screen and (max-width: 44.375em) {
   .aboutus {
     flex-direction: column;
     margin: 0 auto;
@@ -189,6 +189,7 @@
 
 /*partnership*/
 .partnership {
+  margin: 1rem;
   padding: 1rem;
   background-color: var(--color2);
 }
