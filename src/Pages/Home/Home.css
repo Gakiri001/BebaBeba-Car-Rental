@@ -5,7 +5,7 @@
   --color4: #e6ff94;
 }
 .Hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  background: linear-gradient(rgba(0, 103, 105, 0.8), rgba(0, 103, 105, 0.8)),
     url(../../assets/hero.jpg);
   background-size: cover;
   background-position: center;
@@ -14,7 +14,7 @@
   row-gap: 2rem;
 }
 .Hero .HeroTop h1 {
-  color: var(--color1);
+  color: var(--color2);
   font-size: 80px;
   margin: 2rem 0;
   font-style: italic;
@@ -24,7 +24,7 @@
   color: var(--color4);
 }
 .Hero .HeroTop h3 {
-  color: var(--color1);
+  color: var(--color2);
   font-size: 50px;
   margin-bottom: 2rem;
   font-style: italic;
@@ -43,11 +43,11 @@
   font-size: 15px;
 }
 .Hero .HeroBottom .rentbtn {
-  background-color: var(--color1);
+  background-color: var(--color2);
   color: var(--color4);
 }
 .Hero .HeroBottom .rentbtn:hover {
-  background-color: var(--color2);
+  background-color: var(--color1);
 }
 .Hero .HeroBottom .bebtn {
   background-color: var(--color4);
@@ -141,8 +141,9 @@
 .aboutus .aboutusLeft .image img {
   width: 80%;
   border-radius: 10px;
-  box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 1);
+  box-shadow: 0px 20px 40px 0 rgba(0, 103, 105, 1);
   object-fit: cover;
+  color: black;
 }
 .aboutus .aboutusLeft .Aboutstats {
   display: flex;
@@ -156,14 +157,19 @@
 }
 .aboutus .aboutusLeft .Aboutstats div {
   width: 50%;
+  color: var(--color2);
 }
 .aboutus .aboutusRight {
   width: 50%;
   display: grid;
   place-content: center;
 }
+.aboutus .aboutusRight h1{
+  color: var(--color2);
+}
 .aboutus .aboutusRight p {
   line-height: 1.5rem;
+  color: var(--color2);
 }
 @media screen and (max-width: 44.375em) {
   .aboutus {
@@ -191,7 +197,6 @@
 .partnership {
   margin: 1rem;
   padding: 1rem;
-  background-color: var(--color2);
 }
 .partnership h1 {
   text-align: center;
@@ -207,6 +212,8 @@
 .partnership .partnershipimages img {
   width: 10%;
   border-radius: 20%;
+  box-shadow: 0px 20px 40px 0 rgba(0, 103, 105, 1);
+  
 }
 @media screen and (max-width: 26.875em) {
   .partnership .partnershipimages {

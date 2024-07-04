@@ -1,5 +1,5 @@
 import "./Home.css";
-import aboutPic from "../../assets/aboutpic.jpg";
+import aboutPic from "../../assets/car3.jpg";
 function Aboutus() {
   return (
     <div className="aboutus">

@@ -9,7 +9,7 @@ import "./Listing.css"
 
 
 const Listcard = ({
-  image,VehicleName,Category,Transmission,FuelType,Seats,AirConditioning, DailyRate
+  image,image2,VehicleName,Category,Transmission,FuelType,Seats,AirConditioning, DailyRate
 }) => {
   return(
     <div className='Listcard'>
@@ -28,7 +28,7 @@ const Listcard = ({
         </ul>
       </div>
       <div className='Listcard3'>
-        <img src={image} alt="" />
+        <img src={image2} alt="" />
       </div>
       <div className='Listcard4'>
         <div className="color1"></div>
@@ -48,6 +48,7 @@ function Listing() {
           <Listcard
           key={i}
           image={current.image}
+          image2={current.image2}
           VehicleName={current.VehicleName}
           Category={current.Category}
           Transmission={current.Transmission}

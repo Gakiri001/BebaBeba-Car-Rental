@@ -52,6 +52,7 @@
   border: none;
   cursor: pointer;
 }
+.Header .HeaderButtons button .Signup,
 .Header .HeaderButtons button .Login{
   text-decoration: none;
   color: var(--color4);
