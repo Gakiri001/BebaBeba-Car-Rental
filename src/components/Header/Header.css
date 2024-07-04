@@ -52,6 +52,10 @@
   border: none;
   cursor: pointer;
 }
+.Header .HeaderButtons button .Login{
+  text-decoration: none;
+  color: var(--color4);
+}
 .Header .HeaderButtons button:hover {
   background-color: var(--color2);
 }

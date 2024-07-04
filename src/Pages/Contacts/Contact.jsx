@@ -20,7 +20,7 @@ function Contact() {
         <div className="Contactleft">
           <div className="leftHead">
             <h1>Get in touch</h1>
-            <p>Looking for help? Fill the form and start a new adventure</p>
+            <p>Looking for help? Fill the form and Travel with us</p>
           </div>
           <hr />
           <div className="contactinfoWrapper">
@@ -30,7 +30,7 @@ function Contact() {
                 <div>
                   <IoMdHome />
                 </div>
-                <p>144 10200 Murang'a, Kenya</p>
+                <p>001 99800 Kingston, Jamaica</p>
               </div>
             </div>
             <hr />
@@ -40,7 +40,7 @@ function Contact() {
                 <div>
                   <IoCall />
                 </div>
-                <p>0790153849</p>
+                <p>+625790153849</p>
               </div>
             </div>
             <hr />
@@ -75,7 +75,7 @@ function Contact() {
         </div>
 
         <div className="contactRight">
-          <h1>Let's Connect</h1>
+          <h1>Highway Membership</h1>
           <p>
             Lets grow together, it's what we are made to do. we gain and learn
             together as one world
