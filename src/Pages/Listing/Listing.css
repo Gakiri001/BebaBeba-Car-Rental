@@ -97,6 +97,9 @@
   font-size: 16px;
   color: var(--color4);
 }
+.Listcard .Listcard4 button:hover{
+  background-color: var(--color1);
+}
 
 @media screen and (max-width: 64.375em) {
   .ListingFather{
