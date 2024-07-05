@@ -1,0 +1,92 @@
+:root {
+  --color1: #006769;
+  --color2: #40a578;
+  --color3: #9dde8d;
+  --color4: #e6ff94;
+}
+.Footer{
+  padding: 3rem;
+  background-color: var(--color4);
+}
+.Footer .FooterTop{
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer .FooterTop .FooterTopDev img{
+  width: 100px;
+  border-radius: 50%;
+}
+
+.Footer .FooterTop .FooterTopDev p{
+  margin-top: 10px;
+  color: var(--color2);
+}
+
+.Footer .FooterTop .list .unorderedlist{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.Footer .FooterTop .list .unorderedlist li{
+  list-style: none;
+  color: var(--color2);
+  cursor: pointer;
+}
+.Footer .FooterTop .list .unorderedlist li:hover{
+  color: var(--color1);
+}
+
+.Footer .FooterDown{
+  display: grid;
+  place-content: center;
+}
+.Footer .FooterDown .FooterDownicons{
+  display: flex;
+  justify-content: space-between;
+  column-gap: 2rem;
+  margin-top: 20px;
+}
+.Footer .FooterDown .FooterDownicons div{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color3);
+  font-size: 16px;
+  display: grid;
+  place-content: center;
+  color: var(--color2);
+  cursor: pointer;
+}
+.Footer .FooterDown .FooterDownicons div:hover{
+  background-color: var(--color1);
+}
+@media screen and (max-width: 44.375em) {
+  .Footer .FooterTop{
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    justify-content: space-evenly;
+  }
+  .Footer .FooterTop .FooterTopDev{
+    width: 50%;
+  }
+  .Footer .FooterTop .list{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 44.375em) {
+  .Footer .FooterTop .FooterTopDev{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .Footer .FooterTop .list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
