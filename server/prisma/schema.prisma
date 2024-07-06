@@ -24,3 +24,25 @@ model User {
   @@unique([lesseID,email,driverLicense])
   @@map("users_table")
 }
+
+model Reservation{
+  id String @id @default(uuid())
+  picklocation String @map("picklocation")
+  droplocation String @map("droplocation")
+  startingdate DateTime @map("startingdate")
+  enddate DateTime @map("enddate")
+
+  @@map("reservation_table")
+}
+
+model LesseeDetails{
+  id String @id @default(uuid())
+  lesseName String @map("lesseName")
+  lesseNumber Int @map("lesseNumber")
+  lesseExperience Int @map("lesseExperience")
+  lesseID Int @map("lesseID")
+  driverLicense Int @map("driverLicense")
+
+  @@map("lessee_table")
+  @@unique([lesseNumber,lesseID,driverLicense])
+}

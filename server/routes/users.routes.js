@@ -6,7 +6,7 @@ const router = Router();
 router.post("/register", createUser);
 
 router.get("/", (req, res) => {
-  res.send("Mkuu");
+  res.send("Testing Users Sign up");
 });
 
 export default router;

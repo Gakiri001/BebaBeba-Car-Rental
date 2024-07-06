@@ -5,7 +5,7 @@ import { FaEnvelope } from "react-icons/fa6";
 import { GiPadlock } from "react-icons/gi";
 import { FaUser } from "react-icons/fa";
 import { HiIdentification } from "react-icons/hi2";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 
 function Signup() {
@@ -23,13 +23,13 @@ function Signup() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formValues),
-        }
+        },
       );
       if (!response.ok) {
         throw new Error("Failed to register");
       }
       console.log("Registration successfully", response);
-      navigate('/login')
+      navigate("/login");
     } catch (err) {
       setError(err.message);
     }

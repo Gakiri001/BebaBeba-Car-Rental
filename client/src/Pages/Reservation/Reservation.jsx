@@ -1,21 +1,53 @@
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import car from "../../assets/car1.jpg";
 import lesseepic from "../../assets/hero.jpg";
 import * as Yup from "yup";
 import "./Reservation.css";
+import { useNavigate } from "react-router-dom";
 
 function Reservation() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+
+  // const handleSubmiting =() =>{
+  //   console.log("Mmhh")
+  // }
+
+  const handleSubmit = async (formvalues) => {
+    try {
+      const response = await fetch(
+        `http://localhost:8080/api/reserve/register/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formvalues),
+        },
+      );
+      if (!response.ok) {
+        throw new Error("Failed to reserve the car");
+      }
+      console.log("Reserved Successfully", response);
+      navigate("/login");
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   const validationSchema = Yup.object().shape({
-    date: Yup.date().required("Starting Date is Required").nullable(),
-    date2: Yup.date().required("End Date is Required").nullable(),
-    location: Yup.string()
+    startingdate: Yup.date().required("Starting Date is Required").nullable(),
+    enddate: Yup.date().required("End Date is Required").nullable(),
+    picklocation: Yup.string()
       .trim()
       .oneOf(
         ["Mandeville", "MontegoBay", "Kingston", "MayPen", "SpanishTown"],
         "Invalid Town selection",
       )
       .required("Pick up Location is required"),
-    location2: Yup.string()
+    droplocation: Yup.string()
       .trim()
       .oneOf(
         ["Mandeville", "MontegoBay", "Kingston", "MayPen", "SpanishTown"],
@@ -28,9 +60,10 @@ function Reservation() {
       .required("The lesse Phone Number is Required")
       .positive("Must be a positive number")
       .integer("Must be an Integer"),
-    lesseEmail: Yup.string()
-      .email("Invalid Email Address")
-      .required("The Lesse email is required"),
+      lesseExperience: Yup.number()
+      .positive("Must be a positive number")
+      .integer("Must be an Integer")
+      .required("The Lesse years of experience is required"),
     lesseID: Yup.number()
       .required("The lesse ID Number is Required")
       .positive("ID Number must be postive number")
@@ -46,18 +79,30 @@ function Reservation() {
       <div className="ReservationWrapper">
         <div className="ReservationTop">
           <Formik
-            initialValues={{ date: "", location: "", date2: "", location2: "" }}
+            initialValues={{
+              startingdate: "",
+              picklocation: "",
+              droplocation: "",
+              enddate: "",
+            }}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting }) => {
               console.log("Form data", values);
+              handleSubmit(values);
               setSubmitting(false);
             }}
           >
-            {({ isSubmitting }) => (
+            {({ isSubmitting, values, handleChange }) => (
               <Form action="">
                 <div>
-                  <label htmlFor="pickLocation">Pick-Up location</label>
-                  <Field as="select" name="location" className="Field">
+                  <label htmlFor="picklocation">Pick-Up location</label>
+                  <Field
+                    as="select"
+                    name="picklocation"
+                    className="Field"
+                    value={values.picklocation}
+                    onChange={handleChange}
+                  >
                     <option value="" label="Select location" />
                     <option value="Mandeville" label="Mandeville" />
                     <option value="MontegoBay" label="MontegoBay" />
@@ -66,14 +111,20 @@ function Reservation() {
                     <option value="SpanishTown" label="SpanishTown" />
                   </Field>
                   <ErrorMessage
-                    name="location"
+                    name="picklocation"
                     component="div"
                     className="error"
                   />
                 </div>
                 <div>
-                  <label htmlFor="dropLocation">Drop-off location</label>
-                  <Field as="select" name="location2" className="Field">
+                  <label htmlFor="droplocation">Drop-off location</label>
+                  <Field
+                    as="select"
+                    name="droplocation"
+                    className="Field"
+                    value={values.droplocation}
+                    onChange={handleChange}
+                  >
                     <option value="" label="Select location" />
                     <option value="Mandeville" label="Mandeville" />
                     <option value="MontegoBay" label="MontegoBay" />
@@ -82,21 +133,37 @@ function Reservation() {
                     <option value="SpanishTown" label="SpanishTown" />
                   </Field>
                   <ErrorMessage
-                    name="location2"
+                    name="droplocation"
                     component="div"
                     className="error"
                   />
                 </div>
                 <div>
-                  <label htmlFor="date">Start Date</label>
-                  <Field type="date" name="date" className="Field" />
-                  <ErrorMessage name="date" component="div" className="error" />
+                  <label htmlFor="startingdate">Start Date</label>
+                  <Field
+                    type="date"
+                    name="startingdate"
+                    className="Field"
+                    value={values.startingdate}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    name="startingdate"
+                    component="div"
+                    className="error"
+                  />
                 </div>
                 <div>
-                  <label htmlFor="date">End Date</label>
-                  <Field type="date" name="date2" className="Field" />
+                  <label htmlFor="enddate">End Date</label>
+                  <Field
+                    type="date"
+                    name="enddate"
+                    className="Field"
+                    value={values.enddate}
+                    onChange={handleChange}
+                  />
                   <ErrorMessage
-                    name="date2"
+                    name="enddate"
                     component="div"
                     className="error"
                   />
@@ -106,6 +173,7 @@ function Reservation() {
                     type="submit"
                     disabled={isSubmitting}
                     className="Proceedbtn"
+                    // onClick={handleSubmiting}
                   >
                     Proceed
                   </button>
@@ -127,7 +195,7 @@ function Reservation() {
             initialValues={{
               lesseName: "",
               lesseNumber: "",
-              lesseEmail: "",
+              lesseExperience: "",
               lesseID: "",
               driverLicense: "",
             }}
@@ -158,10 +226,10 @@ function Reservation() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="lesseEmail">Lessee's Email Address</label>
-                  <Field type="email" name="lesseEmail" className="Field" />
+                  <label htmlFor="lesseExperience">Lessee's Driving Experience</label>
+                  <Field type="number" name="lesseExperience" className="Field" />
                   <ErrorMessage
-                    name="lesseEmail"
+                    name="lesseExperience"
                     component="div"
                     className="error"
                   />
