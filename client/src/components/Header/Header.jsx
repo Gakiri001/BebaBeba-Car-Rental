@@ -33,8 +33,16 @@ function Header() {
         </ul>
       </div>
       <div className="HeaderButtons">
-        <button><Link className="Login" to="/Login">Log In</Link></button>
-        <button><Link className="Signup" to="/Signup">Sign Up</Link></button>
+        <button>
+          <Link className="Login" to="/Login">
+            Log In
+          </Link>
+        </button>
+        <button>
+          <Link className="Signup" to="/Signup">
+            Sign Up
+          </Link>
+        </button>
       </div>
     </div>
   );

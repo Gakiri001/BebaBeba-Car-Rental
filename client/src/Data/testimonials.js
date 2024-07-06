@@ -32,21 +32,21 @@ const testimonials = [
     name: "Rajiv P.",
     heading: "Exceptional Service and Experience",
     description:
-    "From pick-up to drop-off, everything was hassle-free with BebaBeba. Their staff was friendly and helpful, making my rental experience truly enjoyable.",
+      "From pick-up to drop-off, everything was hassle-free with BebaBeba. Their staff was friendly and helpful, making my rental experience truly enjoyable.",
   },
   {
     image: person4,
     name: " Emily R.",
     heading: "A Journey to Remember",
     description:
-     "I rented from BebaBeba for a business trip. The rates were unbeatable, and the car was in perfect condition. Will definitely use them again. ",
+      "I rented from BebaBeba for a business trip. The rates were unbeatable, and the car was in perfect condition. Will definitely use them again. ",
   },
   {
     image: person5,
     name: " Carlos M.",
     heading: "Best Travelling Company Ever!",
     description:
-    "BebaBeba made my trip seamless. The booking process was easy, the car was clean, and customer service was outstanding. Highly recommend their service!",
+      "BebaBeba made my trip seamless. The booking process was easy, the car was clean, and customer service was outstanding. Highly recommend their service!",
   },
 ];
 

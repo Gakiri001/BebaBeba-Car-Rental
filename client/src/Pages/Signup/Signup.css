@@ -4,9 +4,9 @@
   --color3: #9dde8d;
   --color4: #e6ff94;
 }
-.SignupFather{
+.SignupFather {
   background: linear-gradient(rgba(0, 103, 105, 0.8), rgba(0, 103, 105, 0.8)),
-  url(../../assets/hero.jpg);
+    url(../../assets/hero.jpg);
   background-size: cover;
   background-position: center;
   display: grid;
@@ -16,13 +16,13 @@
   position: relative;
 }
 
-.SignupFather .formSignup{
+.SignupFather .formSignup {
   width: 100%;
   max-width: 650px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background: var(--color2);
   padding: 1rem 1rem;
   text-align: center;
@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column;
 }
-.SignupFather .formSignup .signupGroup{
+.SignupFather .formSignup .signupGroup {
   height: 100%;
   display: flex;
   width: 100%;
@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: center;
 }
-.SignupFather .formSignup .signupGroup .SignUpInput{
+.SignupFather .formSignup .signupGroup .SignUpInput {
   background: #eaeaea;
   width: 45%;
   margin: 15px 0;
@@ -51,7 +51,7 @@
   transition: max-height 0.5s;
   overflow: hidden;
 }
-.SignupFather .formSignup .signupGroup .SignUpInput label{
+.SignupFather .formSignup .signupGroup .SignUpInput label {
   margin-left: 15px;
   color: #999;
 }
@@ -61,7 +61,7 @@
 .SignupFather .formSignup .signupGroup .SignUpInput .email,
 .SignupFather .formSignup .signupGroup .SignUpInput .driverLicense,
 .SignupFather .formSignup .signupGroup .SignUpInput .password,
-.SignupFather .formSignup .signupGroup .SignUpInput .password{
+.SignupFather .formSignup .signupGroup .SignUpInput .password {
   background: #eaeaea;
   width: 100%;
   border: 0;
@@ -69,16 +69,16 @@
   padding: 18px 15px;
   border-radius: 20px;
 }
-.SignupFather .formSignup .signupGroup .SignUpInput .error{
+.SignupFather .formSignup .signupGroup .SignUpInput .error {
   color: red;
   font-size: 11px;
 }
-.SignupFather .formSignup .signupGroup .SignUpDiv{
+.SignupFather .formSignup .signupGroup .SignUpDiv {
   display: grid;
   place-content: center;
   width: 100%;
 }
-.SignupFather .formSignup .signupGroup .SignUpDiv .Signbtn{
+.SignupFather .formSignup .signupGroup .SignUpDiv .Signbtn {
   padding: 1rem 3rem;
   background-color: var(--color1);
   border: none;
@@ -87,17 +87,17 @@
   cursor: pointer;
   margin: 1rem 0;
 }
-.SignupFather .formSignup .signupGroup .SignUpDiv .Signbtn:hover{
+.SignupFather .formSignup .signupGroup .SignUpDiv .Signbtn:hover {
   background-color: var(--color3);
 }
-.SignupFather .formSignup p{
+.SignupFather .formSignup p {
   margin: 0.5rem 0;
 }
-.SignupFather .formSignup p a{
+.SignupFather .formSignup p a {
   color: var(--color4);
   cursor: pointer;
   text-decoration: none;
 }
-.SignupFather .formSignup p a:hover{
+.SignupFather .formSignup p a:hover {
   color: var(--color3);
 }

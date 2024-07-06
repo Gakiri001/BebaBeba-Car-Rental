@@ -53,7 +53,7 @@
   cursor: pointer;
 }
 .Header .HeaderButtons button .Signup,
-.Header .HeaderButtons button .Login{
+.Header .HeaderButtons button .Login {
   text-decoration: none;
   color: var(--color4);
 }

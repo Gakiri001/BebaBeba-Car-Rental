@@ -4,7 +4,7 @@
   --color3: #9dde8d;
   --color4: #e6ff94;
 }
-.ListingFather{
+.ListingFather {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -12,10 +12,10 @@
   row-gap: 2rem;
   align-items: center;
 }
-.ListingFather .head{
+.ListingFather .head {
   color: var(--color2);
 }
-.Listcard{
+.Listcard {
   display: flex;
   margin-bottom: 2rem;
   justify-content: space-between;
@@ -28,37 +28,37 @@
   border-bottom-left-radius: 100px;
   border-top-right-radius: 100px;
 }
-.Listcard .Listcard1{
+.Listcard .Listcard1 {
   width: 40%;
   margin-right: 20px;
 }
-.Listcard .Listcard1 img{
+.Listcard .Listcard1 img {
   width: 100%;
   border-bottom-left-radius: 50px;
   border-top-right-radius: 50px;
   box-shadow: 0px 20px 40px 0 rgba(0, 103, 105, 1);
 }
-.Listcard .Listcard2{
+.Listcard .Listcard2 {
   width: 30%;
 }
-.Listcard .Listcard2 h2{
+.Listcard .Listcard2 h2 {
   font-size: 30px;
   font-style: italic;
   text-align: center;
   margin-bottom: 2rem;
   color: var(--color2);
 }
-.Listcard .Listcard2 ul{
+.Listcard .Listcard2 ul {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
 }
-.Listcard .Listcard2 li{
+.Listcard .Listcard2 li {
   list-style: none;
   display: flex;
   align-items: center;
 }
-.Listcard .Listcard2 li div{
+.Listcard .Listcard2 li div {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -69,28 +69,28 @@
   color: var(--color3);
   margin-right: 10px;
 }
-.Listcard .Listcard3{
+.Listcard .Listcard3 {
   width: 30%;
   margin-right: 30px;
 }
-.Listcard .Listcard3 img{
+.Listcard .Listcard3 img {
   width: 100%;
   border-bottom-left-radius: 50px;
   border-top-right-radius: 50px;
   box-shadow: 0px 20px 40px 0 rgba(0, 103, 105, 1);
 }
-.Listcard .Listcard4{
+.Listcard .Listcard4 {
   width: 20%;
   display: flex;
   flex-direction: column;
   row-gap: 4rem;
 }
-.Listcard .Listcard4 h2{
+.Listcard .Listcard4 h2 {
   font-size: 30px;
   font-style: italic;
   color: var(--color2);
 }
-.Listcard .Listcard4 button{
+.Listcard .Listcard4 button {
   padding: 0.5rem 1rem;
   border: none;
   background-color: var(--color2);
@@ -99,28 +99,28 @@
   font-size: 16px;
   color: var(--color4);
 }
-.Listcard .Listcard4 button:hover{
+.Listcard .Listcard4 button:hover {
   background-color: var(--color1);
 }
 
 @media screen and (max-width: 64.375em) {
-  .ListingFather{
+  .ListingFather {
     width: 100%;
   }
 }
 @media screen and (max-width: 50.625em) {
-  .ListingFather .Listcard{
+  .ListingFather .Listcard {
     flex-wrap: wrap;
   }
   .Listcard .Listcard1,
   .Listcard .Listcard2,
   .Listcard .Listcard3,
-  .Listcard .Listcard4{
+  .Listcard .Listcard4 {
     width: 40%;
   }
 }
 @media screen and (max-width: 36.25em) {
-  .ListingFather .Listcard{
+  .ListingFather .Listcard {
     justify-content: center;
     align-items: center;
     row-gap: 1rem;
@@ -128,10 +128,10 @@
   .Listcard .Listcard1,
   .Listcard .Listcard2,
   .Listcard .Listcard3,
-  .Listcard .Listcard4{
+  .Listcard .Listcard4 {
     width: 80%;
   }
-  .Listcard .Listcard4 h2{
+  .Listcard .Listcard4 h2 {
     text-align: center;
   }
 }
