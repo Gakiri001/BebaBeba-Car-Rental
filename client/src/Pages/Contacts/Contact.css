@@ -83,6 +83,8 @@ hr {
 .Contact .ContactWrapper .contactRight {
   width: 70%;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 .Contact .ContactWrapper .contactRight h1,
 .Contact .ContactWrapper .contactRight p {
@@ -114,6 +116,9 @@ hr {
   cursor: pointer;
   border: none;
 }
+.Contact .ContactWrapper .contactRight img{
+  width: 80%;
+}
 .Contact .ContactWrapper .contactRight form .submit:hover {
   background-color: var(--color2);
 }
@@ -121,12 +126,16 @@ hr {
   width: 100%;
 }
 
+
 @media screen and (max-width: 59.375em) {
   .Contact .ContactWrapper .Contactleft {
     width: 50%;
   }
   .Contact .ContactWrapper .contactRight {
     width: 50%;
+  }
+  .Contact .ContactWrapper .contactRight img{
+    width: 100%;
   }
   .Contact .ContactWrapper .contactRight form textarea,
   .Contact .ContactWrapper .contactRight form input {

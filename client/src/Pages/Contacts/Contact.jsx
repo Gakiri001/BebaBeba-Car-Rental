@@ -8,6 +8,7 @@ import {
   FaLinkedin,
   FaInstagram,
 } from "react-icons/fa";
+import car from "../../assets/aboutpic.jpg";
 import "./Contact.css";
 
 function Contact() {
@@ -75,22 +76,7 @@ function Contact() {
         </div>
 
         <div className="contactRight">
-          <h1>Highway Membership</h1>
-          <p>
-            Lets grow together, it's what we are made to do. we gain and learn
-            together as one world
-          </p>
-          <form>
-            <input type="text" placeholder="Your Name" />
-            <input type="text" placeholder="Email" />
-            <input type="text" placeholder="Subject" />
-            <textarea
-              placeholder="How can we help you"
-              name=""
-              id=""
-            ></textarea>
-            <input className="submit" type="Submit" />
-          </form>
+          <img src={car} alt="" />
         </div>
       </div>
       <section className="map">

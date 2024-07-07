@@ -8,6 +8,7 @@ import Reservation from "./Pages/Reservation/Reservation";
 import Contact from "./Pages/Contacts/Contact";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
+import Pay from "./Pages/Pay/Pay";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
+          <Route path="/Pay" element={<Pay />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -27,7 +27,7 @@ function Reservation() {
       const data = await response.json();
       console.log(data);
       if (data.success === true) {
-        navigate("/login");
+        navigate("/pay");
       } else {
         setError(data.message);
       }
