@@ -1,17 +1,52 @@
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import React, {useState} from "react";
+import { Formik, Form, Field, ErrorMessage,useFormik } from "formik";
 import * as Yup from "yup";
 import "./Login.css";
 import { FaEnvelope } from "react-icons/fa6";
 import { GiPadlock } from "react-icons/gi";
+import { apiurl } from "../../utils/congig";
+import {useNavigate} from "react-router-dom"
 
 function Login() {
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
+  const navigate = useNavigate()
+
+  const handleSubmit = async (formValues) => {
+    try{
+      setLoading(true);
+      setError(false);
+      const reponse = await fetch (`${apiurl}/api/users/login/`,{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+        },
+        body: JSON.stringify(formValues),
+        credentials:"include"
+      });
+
+      const data = await reponse.json()
+      console.log(data)
+
+      if(reponse.ok){
+        navigate("/")
+      }
+      else{
+        setError(data.message || "Login Failed")
+      }
+    }
+    catch(err){
+      setError(e.message)
+    }
+    finally{
+      setLoading(false)
+    }
+  }
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Invalid Email Address")
       .required("The Email is required"),
     password: Yup.string()
-      .min(6, "Password must be at least 6 characters")
       .required("The password is required"),
   });
   return (
@@ -21,10 +56,11 @@ function Login() {
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {
           console.log("Login Data", values);
+          handleSubmit(values)
           setSubmitting(false);
         }}
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting,values, handleChange }) => (
           <Form className="form">
             <h1>Login</h1>
             <div className="inputGroup">
@@ -37,6 +73,8 @@ function Login() {
                   name="email"
                   placeHolder="Your Your Email Address"
                   className="email"
+                  value={values.email}
+                  onChange={handleChange}
                 />
                 <ErrorMessage name="email" component="div" className="error" />
               </div>
@@ -50,6 +88,8 @@ function Login() {
                   name="password"
                   placeHolder="Enter Your password"
                   className="password"
+                  value={values.password}
+                  onChange={handleChange}
                 />
                 <ErrorMessage
                   name="password"
