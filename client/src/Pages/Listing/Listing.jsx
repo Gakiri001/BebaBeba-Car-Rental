@@ -6,6 +6,7 @@ import { BsFillFuelPumpFill } from "react-icons/bs";
 import { FaUsers } from "react-icons/fa6";
 import { PiFanFill } from "react-icons/pi";
 import "./Listing.css";
+import { useNavigate } from "react-router-dom";
 
 const Listcard = ({
   image,
@@ -18,6 +19,19 @@ const Listcard = ({
   AirConditioning,
   DailyRate,
 }) => {
+  const navigate = useNavigate();
+
+  const handleBookClick = () => {
+    navigate("/Reservation", {
+      state: {
+        vehicle: {
+          image,
+          VehicleName,
+        },
+      },
+    });
+  };
+
   return (
     <div className="Listcard">
       <div className="Listcard1">
@@ -65,7 +79,7 @@ const Listcard = ({
       <div className="Listcard4">
         <div className="color1"></div>
         <h2>{DailyRate} @ day</h2>
-        <button>Book</button>
+        <button onClick={handleBookClick}>Book</button>
       </div>
     </div>
   );
