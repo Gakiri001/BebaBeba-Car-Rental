@@ -9,8 +9,8 @@ export const createReserve = async (req,res) => {
       data: {
         picklocation:picklocation,
         droplocation:droplocation,
-        startingdate:startingdate,
-        enddate:enddate,
+        startingdate: new Date (startingdate),
+        enddate:new Date (enddate),
       },
       select:{
         id:true,

@@ -4,16 +4,16 @@
   --color3: #9dde8d;
   --color4: #e6ff94;
 }
-.Reservation {
+.Reservation{
   padding: 1rem;
 }
-.Reservation .head {
+.Reservation .head{
   text-align: center;
   color: var(--color2);
   margin-bottom: 50px;
 }
-.Reservation .LesseDetails,
-.Reservation .ReservationWrapper {
+.Reservation .formTop,
+.Reservation .formBottom{
   margin-bottom: 60px;
   display: flex;
   padding: 1rem;
@@ -21,101 +21,97 @@
   border-bottom-left-radius: 100px;
   border-top-right-radius: 100px;
 }
-.Reservation .LesseDetails .LesseDetailsLeft,
-.Reservation .ReservationWrapper .ReservationTop {
+
+.Reservation .formTop .Reserve,
+.Reservation .formBottom .lesseeDetails{
   width: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.Reservation .LesseDetails .LesseDetailsLeft div,
-.Reservation .ReservationWrapper .ReservationTop div {
+
+.Reservation .formTop .Reserve div,
+.Reservation .formBottom .lesseeDetails div{
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
 }
-.Reservation .LesseDetails .LesseDetailsLeft div label,
-.Reservation .ReservationWrapper .ReservationTop div label {
+
+
+.Reservation .formTop .Reserve div label,
+.Reservation .formBottom .lesseeDetails div label{
   color: var(--color2);
   font-size: 15px;
   margin-bottom: 10px;
 }
-.Reservation .LesseDetails .LesseDetailsLeft div .Field,
-.Reservation .ReservationWrapper .ReservationTop div .Field {
+.Reservation .formTop .Reserve div input,
+.Reservation .formBottom .lesseeDetails div input{
   width: 200px;
   height: 35px;
   border: var(--color2) solid 2px;
   border-radius: 10px;
 }
-.Reservation .LesseDetails .LesseDetailsLeft div .error,
-.Reservation .ReservationWrapper .ReservationTop div .error {
-  color: red;
-}
-.Reservation .LesseDetails .lesseDetailsRight,
-.Reservation .ReservationWrapper .ReservationDown {
+
+.Reservation .formTop .formTopRight,
+.Reservation .formBottom .formBottomRight{
   width: 50%;
 }
-.Reservation .LesseDetails .lesseDetailsRight h1,
-.Reservation .ReservationWrapper .ReservationDown h1 {
+.Reservation .formTop .formTopRight h1,
+.Reservation .formBottom .formBottomRight h1{
   text-align: center;
   margin-bottom: 10px;
   color: var(--color2);
 }
-.Reservation .LesseDetails .lesseDetailsRight img,
-.Reservation .ReservationWrapper .ReservationDown img {
+.Reservation .formTop .formTopRight img,
+.Reservation .formBottom .formBottomRight img{
   width: 80%;
   border-bottom-left-radius: 50px;
   border-top-right-radius: 50px;
   box-shadow: 0px 20px 40px 0 rgba(0, 103, 105, 1);
 }
-.Proceedbtn {
-  height: 35px;
-  background-color: var(--color1);
-  color: var(--color4);
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.payment {
+
+.Reservation .SubmitDiv{
   display: grid;
   place-content: center;
 }
-.payment .paymentBtn {
+.Reservation .SubmitDiv button{
+  padding: 1rem 2rem;
   background-color: var(--color1);
   color: var(--color4);
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  padding: 1rem 1.8rem;
 }
+
 @media screen and (max-width: 50.625em) {
-  .Reservation .LesseDetails,
-  .Reservation .ReservationWrapper {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .Reservation .LesseDetails .LesseDetailsLeft,
-  .Reservation .ReservationWrapper .ReservationTop {
-    width: 100%;
-  }
-  .Reservation .LesseDetails .LesseDetailsLeft div .Field,
-  .Reservation .ReservationWrapper .ReservationTop div .Field {
-    width: 300px;
-  }
-  .Reservation .LesseDetails .lesseDetailsRight,
-  .Reservation .ReservationWrapper .ReservationDown {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  .Reservation .formTop,
+.Reservation .formBottom{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Reservation .formTop .Reserve,
+.Reservation .formBottom .lesseeDetails{
+  width: 100%;
+}
+.Reservation .formTop .Reserve div input,
+.Reservation .formBottom .lesseeDetails div input{
+  width: 300px;
+}
+.Reservation .formTop .formTopRight,
+.Reservation .formBottom .formBottomRight{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 }
 
 @media screen and (max-width: 23.4375em) {
-  .Reservation .LesseDetails .LesseDetailsLeft div .Field,
-  .Reservation .ReservationWrapper .ReservationTop div .Field {
-    width: 200px;
-  }
+  .Reservation .formTop .Reserve div input,
+.Reservation .formBottom .lesseeDetails div input{
+  width: 200px;
+}
 }

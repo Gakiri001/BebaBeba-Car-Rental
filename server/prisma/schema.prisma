@@ -46,3 +46,20 @@ model LesseeDetails{
   @@map("lessee_table")
   @@unique([lesseNumber,lesseID,driverLicense])
 }
+
+
+model RentalDetails{
+  id String @id @default(uuid())
+  startingdate DateTime @map("startingdate")
+  enddate DateTime @map("enddate")
+  picklocation String @map("picklocation")
+  droplocation String @map("droplocation")
+  lesseName String @map("lesseName")
+  lesseNumber Int @map("lesseNumber")
+  lesseExperience Int @map("lesseExperience")
+  lesseID Int @map("lesseID")
+  driverLicense Int @map("driverLicense")
+
+  @@map("rental_table")
+  @@unique([lesseNumber, lesseID, driverLicense])
+}
