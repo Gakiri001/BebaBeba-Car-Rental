@@ -27,6 +27,7 @@ const Listcard = ({
         vehicle: {
           image,
           VehicleName,
+          image2,
         },
       },
     });

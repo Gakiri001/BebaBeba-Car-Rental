@@ -160,7 +160,7 @@ function Reservation() {
           </div>
           <div className="formBottomRight">
             <h1>Lessee Details</h1>
-            <img src={lesseepic} alt="" />
+            <img src={vehicle.image2} alt="" />
           </div>
         </div>
         <div className="SubmitDiv">
