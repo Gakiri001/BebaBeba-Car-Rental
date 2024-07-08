@@ -109,10 +109,10 @@ function Login() {
               </div>
             </div>
             <p className="loginPara">
-              Lost password <a href="">Click Here</a>
+              Lost password <a href="/Signup">Click Here</a>
             </p>
             <p className="loginPara">
-              If no account click <a href="">Sign Up</a> to register
+              If no account click <a href="/Signup">Sign Up</a> to register
             </p>
           </Form>
         )}
