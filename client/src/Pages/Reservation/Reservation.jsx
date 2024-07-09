@@ -44,11 +44,11 @@ function Reservation() {
       picklocation: "",
       droplocation: "",
       enddate: "",
-      lesseName: "",
-      lesseNumber: "",
       lesseExperience: "",
       lesseID: "",
       driverLicense: "",
+      reason: "",
+
     },
     onSubmit: handleSubmit,
   });
@@ -57,7 +57,10 @@ function Reservation() {
     return (
       <div className="Reservation">
         <h1 className="head">Reservation</h1>
-        <p>Please select a car to book on the <Link to="/Listing">listing page</Link>.</p>
+        <p>
+          Please select a car to book on the{" "}
+          <Link to="/Listing">listing page</Link>.
+        </p>
       </div>
     );
   }
@@ -113,24 +116,6 @@ function Reservation() {
         <div className="formBottom">
           <div className="lesseeDetails">
             <div>
-              <label htmlFor="">Lessee's Name</label>
-              <input
-                type="text"
-                name="lesseName"
-                value={formik.values.lesseName}
-                onChange={formik.handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="">Lessee's phone Number</label>
-              <input
-                type="number"
-                name="lesseNumber"
-                value={formik.values.lesseNumber}
-                onChange={formik.handleChange}
-              />
-            </div>
-            <div>
               <label htmlFor="">Lessee's Years of Experience</label>
               <input
                 type="number"
@@ -156,6 +141,15 @@ function Reservation() {
                 value={formik.values.driverLicense}
                 onChange={formik.handleChange}
               />
+            </div>
+            <div>
+              <label htmlFor="">Lessee's Reason For Hire</label>
+              <textarea
+                type="number"
+                name="reason"
+                value={formik.values.reason}
+                onChange={formik.handleChange}
+              ></textarea>
             </div>
           </div>
           <div className="formBottomRight">

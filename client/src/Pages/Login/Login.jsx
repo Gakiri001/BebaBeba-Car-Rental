@@ -1,53 +1,49 @@
-import React, {useState} from "react";
-import { Formik, Form, Field, ErrorMessage,useFormik } from "formik";
+import React, { useState } from "react";
+import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 import "./Login.css";
 import { FaEnvelope } from "react-icons/fa6";
 import { GiPadlock } from "react-icons/gi";
 import { apiurl } from "../../utils/congig";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(false)
-  const navigate = useNavigate()
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (formValues) => {
-    try{
+    try {
       setLoading(true);
       setError(false);
-      const reponse = await fetch (`${apiurl}/api/users/login/`,{
-        method:"POST",
-        headers:{
-          "Content-Type":"application/json",
+      const reponse = await fetch(`${apiurl}/api/users/login/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formValues),
-        credentials:"include"
+        credentials: "include",
       });
 
-      const data = await reponse.json()
-      console.log(data)
+      const data = await reponse.json();
+      console.log(data);
 
-      if(reponse.ok){
-        navigate("/")
+      if (reponse.ok) {
+        navigate("/Home");
+      } else {
+        setError(data.message || "Login Failed");
       }
-      else{
-        setError(data.message || "Login Failed")
-      }
+    } catch (err) {
+      setError(e.message);
+    } finally {
+      setLoading(false);
     }
-    catch(err){
-      setError(e.message)
-    }
-    finally{
-      setLoading(false)
-    }
-  }
+  };
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Invalid Email Address")
       .required("The Email is required"),
-    password: Yup.string()
-      .required("The password is required"),
+    password: Yup.string().required("The password is required"),
   });
   return (
     <div className="LogIn">
@@ -56,11 +52,11 @@ function Login() {
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {
           console.log("Login Data", values);
-          handleSubmit(values)
+          handleSubmit(values);
           setSubmitting(false);
         }}
       >
-        {({ isSubmitting,values, handleChange }) => (
+        {({ isSubmitting, values, handleChange }) => (
           <Form className="form">
             <h1>Login</h1>
             <div className="inputGroup">
@@ -104,7 +100,7 @@ function Login() {
                   disabled={isSubmitting}
                   className="Loginbtn"
                 >
-                  Login
+                  {loading ? "Please wait..." : "Login"}
                 </button>
               </div>
             </div>

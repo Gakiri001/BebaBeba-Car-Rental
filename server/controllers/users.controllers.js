@@ -7,22 +7,22 @@ const prisma = new PrismaClient();
 
 export const createUser = async (req, res) => {
   try {
-    const { name, lesseID, email, driverLicense, password } = req.body;
+    const { firstname, lastname, email, phoneNumber, password } = req.body;
     const hashedPassword = bcrypt.hashSync(password, 10);
-    const newUser = await prisma.user.create({
+    const newUser = await prisma.usersign.create({
       data: {
-        name: name,
-        lesseID: lesseID,
+        firstname: firstname,
+        lastname: lastname,
         email: email,
-        driverLicense: driverLicense,
+        phoneNumber: phoneNumber,
         password: hashedPassword,
       },
       select: {
         id: true,
-        name: true,
-        lesseID: true,
+        firstname: true,
+        lastname: true,
         email: true,
-        driverLicense: true,
+        phoneNumber: true,
         password: true,
       },
     });
@@ -35,7 +35,7 @@ export const createUser = async (req, res) => {
 export const loginUser = async (req,res) => {
   const {email, password} =req.body
   try{
-    const user = await prisma.user.findFirst({
+    const user = await prisma.usersign.findFirst({
       where:{email:email}
     })
     if(user){

@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { IoMdHome } from "react-icons/io";
 import { IoCall } from "react-icons/io5";
 import { FaEnvelope } from "react-icons/fa";
@@ -10,8 +10,48 @@ import {
 } from "react-icons/fa";
 import car from "../../assets/aboutpic.jpg";
 import "./Contact.css";
+import { Formik, useFormik } from "formik";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { apiurl } from "../../utils/congig";
 
 function Contact() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async (formValues) => {
+    try {
+      setLoading(true);
+      setError(false);
+      const response = await fetch(`${apiurl}/api/subject/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+      });
+      const data = await response.json();
+      console.log(data);
+      if (data.success === true) {
+        alert("response sent");
+      } else {
+        setError(data.message);
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      subject: "",
+      explanation: "",
+    },
+    onSubmit: handleSubmit,
+  });
   return (
     <div className="Contact">
       <div className="Hedaer">
@@ -76,7 +116,42 @@ function Contact() {
         </div>
 
         <div className="contactRight">
-          <img src={car} alt="" />
+          <h1>Let's Connect</h1>
+          <p>
+            Lets grow together, it's what we are made to do. we gain and learn
+            together as one world
+          </p>
+          <form onSubmit={formik.handleSubmit}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formik.values.name}
+              onChange={formik.handleChange}
+            />
+            <input
+              type="text"
+              name="email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              placeholder="Email"
+            />
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              value={formik.values.subject}
+              onChange={formik.handleChange}
+            />
+            <textarea
+              placeholder="How can we help you"
+              name="explanation"
+              id=""
+              value={formik.values.explanation}
+              onChange={formik.handleChange}
+            ></textarea>
+            <input className="submit" type="Submit" />
+          </form>
         </div>
       </div>
       <section className="map">

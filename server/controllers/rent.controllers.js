@@ -7,19 +7,18 @@ const prisma = new PrismaClient();
 
 export const createRent = async (req,res) => {
   try{
-    const {startingdate, enddate, picklocation, droplocation, lesseName, lesseNumber,lesseExperience, lesseID, driverLicense } = req.body
+    const {startingdate, enddate, picklocation, droplocation ,lesseExperience, lesseID, driverLicense,reason } = req.body
 
-    const lessee =await prisma.rentalDetails.create({
+    const lessee =await prisma.rentalDetail.create({
       data: {
         startingdate:new Date (startingdate),
         enddate:new Date (enddate),
         picklocation: picklocation,
         droplocation: droplocation,
-        lesseName: lesseName,
-        lesseNumber: lesseNumber,
         lesseExperience: lesseExperience,
         lesseID: lesseID,
         driverLicense: driverLicense,
+        reason: reason,
       },
       select:{
         id: true,
@@ -27,11 +26,10 @@ export const createRent = async (req,res) => {
         enddate: true,
         picklocation: true,
         droplocation: true,
-        lesseName: true,
-        lesseNumber: true,
         lesseExperience: true,
         lesseID: true,
         driverLicense: true,
+        reason: true,
       },
     })
     res.status(201).json({success:true, message:"Booked Successfully"})

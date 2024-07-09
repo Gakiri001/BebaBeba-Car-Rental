@@ -13,53 +13,42 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Usersign {
   id String @id @default(uuid())
-  name String @map("name")
-  lesseID Int @map("lesseID")
+  firstname String @map("firstname")
+  lastname String @map("lastname")
   email String @map("email")
-  driverLicense Int @map("driverLicense")
+  phoneNumber Int @map("phoneNumber")
   password String @map("password")
 
-  @@unique([lesseID,email,driverLicense])
-  @@map("users_table")
-}
-
-model Reservation{
-  id String @id @default(uuid())
-  picklocation String @map("picklocation")
-  droplocation String @map("droplocation")
-  startingdate DateTime @map("startingdate")
-  enddate DateTime @map("enddate")
-
-  @@map("reservation_table")
-}
-
-model LesseeDetails{
-  id String @id @default(uuid())
-  lesseName String @map("lesseName")
-  lesseNumber Int @map("lesseNumber")
-  lesseExperience Int @map("lesseExperience")
-  lesseID Int @map("lesseID")
-  driverLicense Int @map("driverLicense")
-
-  @@map("lessee_table")
-  @@unique([lesseNumber,lesseID,driverLicense])
+  @@unique([email])
+  @@map("user_table")
 }
 
 
-model RentalDetails{
+
+model RentalDetail{
   id String @id @default(uuid())
   startingdate DateTime @map("startingdate")
   enddate DateTime @map("enddate")
   picklocation String @map("picklocation")
   droplocation String @map("droplocation")
-  lesseName String @map("lesseName")
-  lesseNumber Int @map("lesseNumber")
   lesseExperience Int @map("lesseExperience")
   lesseID Int @map("lesseID")
   driverLicense Int @map("driverLicense")
+  reason String @map("reason")
 
-  @@map("rental_table")
-  @@unique([lesseNumber, lesseID, driverLicense])
+  @@map("rentals_table")
+  @@unique([lesseID, driverLicense])
+}
+
+
+model ContactSubject{
+  id String @id @default(uuid())
+  name String @map("name")
+  email String @map("email")
+  subject String @map("subject")
+  explanation String @map("explanation")
+
+  @@map("subject_table")
 }

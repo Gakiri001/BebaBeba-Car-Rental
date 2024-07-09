@@ -4,16 +4,16 @@
   --color3: #9dde8d;
   --color4: #e6ff94;
 }
-.Reservation{
+.Reservation {
   padding: 1rem;
 }
-.Reservation .head{
+.Reservation .head {
   text-align: center;
   color: var(--color2);
   margin-bottom: 50px;
 }
 .Reservation .formTop,
-.Reservation .formBottom{
+.Reservation .formBottom {
   margin-bottom: 60px;
   display: flex;
   padding: 1rem;
@@ -23,7 +23,7 @@
 }
 
 .Reservation .formTop .Reserve,
-.Reservation .formBottom .lesseeDetails{
+.Reservation .formBottom .lesseeDetails {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -32,21 +32,21 @@
 }
 
 .Reservation .formTop .Reserve div,
-.Reservation .formBottom .lesseeDetails div{
+.Reservation .formBottom .lesseeDetails div {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
 }
 
-
 .Reservation .formTop .Reserve div label,
-.Reservation .formBottom .lesseeDetails div label{
+.Reservation .formBottom .lesseeDetails div label {
   color: var(--color2);
   font-size: 15px;
   margin-bottom: 10px;
 }
 .Reservation .formTop .Reserve div input,
-.Reservation .formBottom .lesseeDetails div input{
+.Reservation .formBottom .lesseeDetails div input,
+.Reservation .formBottom .lesseeDetails div textarea {
   width: 200px;
   height: 35px;
   border: var(--color2) solid 2px;
@@ -54,28 +54,28 @@
 }
 
 .Reservation .formTop .formTopRight,
-.Reservation .formBottom .formBottomRight{
+.Reservation .formBottom .formBottomRight {
   width: 50%;
 }
 .Reservation .formTop .formTopRight h1,
-.Reservation .formBottom .formBottomRight h1{
+.Reservation .formBottom .formBottomRight h1 {
   text-align: center;
   margin-bottom: 10px;
   color: var(--color2);
 }
 .Reservation .formTop .formTopRight img,
-.Reservation .formBottom .formBottomRight img{
+.Reservation .formBottom .formBottomRight img {
   width: 80%;
   border-bottom-left-radius: 50px;
   border-top-right-radius: 50px;
   box-shadow: 0px 20px 40px 0 rgba(0, 103, 105, 1);
 }
 
-.Reservation .SubmitDiv{
+.Reservation .SubmitDiv {
   display: grid;
   place-content: center;
 }
-.Reservation .SubmitDiv button{
+.Reservation .SubmitDiv button {
   padding: 1rem 2rem;
   background-color: var(--color1);
   color: var(--color4);
@@ -86,32 +86,34 @@
 
 @media screen and (max-width: 50.625em) {
   .Reservation .formTop,
-.Reservation .formBottom{
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.Reservation .formTop .Reserve,
-.Reservation .formBottom .lesseeDetails{
-  width: 100%;
-}
-.Reservation .formTop .Reserve div input,
-.Reservation .formBottom .lesseeDetails div input{
-  width: 300px;
-}
-.Reservation .formTop .formTopRight,
-.Reservation .formBottom .formBottomRight{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  .Reservation .formBottom {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Reservation .formTop .Reserve,
+  .Reservation .formBottom .lesseeDetails {
+    width: 100%;
+  }
+  .Reservation .formTop .Reserve div input,
+  .Reservation .formBottom .lesseeDetails div input,
+  .Reservation .formBottom .lesseeDetails div textarea {
+    width: 300px;
+  }
+  .Reservation .formTop .formTopRight,
+  .Reservation .formBottom .formBottomRight {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 23.4375em) {
   .Reservation .formTop .Reserve div input,
-.Reservation .formBottom .lesseeDetails div input{
-  width: 200px;
-}
+  .Reservation .formBottom .lesseeDetails div input,
+  .Reservation .formBottom .lesseeDetails div textarea {
+    width: 200px;
+  }
 }

@@ -60,6 +60,9 @@
 .Header .HeaderButtons button:hover {
   background-color: var(--color2);
 }
+.HeaderButtons h2 {
+  color: var(--color2);
+}
 @media screen and (max-width: 59.375em) {
   .Header .HeaderButtons {
     width: 30%;

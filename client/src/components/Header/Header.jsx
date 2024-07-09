@@ -11,7 +11,7 @@ function Header() {
       <div className="HeaderRight">
         <ul>
           <li>
-            <Link className="HeaderLink" to="/">
+            <Link className="HeaderLink" to="/Home">
               DashBoard
             </Link>
           </li>
@@ -33,7 +33,7 @@ function Header() {
         </ul>
       </div>
       <div className="HeaderButtons">
-        <button>
+        {/* <button>
           <Link className="Login" to="/Login">
             Log In
           </Link>
@@ -42,7 +42,9 @@ function Header() {
           <Link className="Signup" to="/Signup">
             Sign Up
           </Link>
-        </button>
+        </button> */}
+
+        <h2>Welcome To BebaBeba</h2>
       </div>
     </div>
   );

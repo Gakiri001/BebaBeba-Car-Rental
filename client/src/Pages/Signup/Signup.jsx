@@ -45,25 +45,22 @@ function Signup() {
     conpassword: Yup.string()
       .oneOf([Yup.ref("password"), null], "Passwords must match")
       .required("The password is required"),
-    name: Yup.string().required("The name is required"),
-    lesseID: Yup.number()
-      .required("The lesse ID Number is Required")
-      .positive("ID Number must be a positive number")
+    firstname: Yup.string().required("The first name is required"),
+    lastname: Yup.string().required("The last name is required"),
+    phoneNumber: Yup.number()
+      .required("The Phone Number is Required")
+      .positive("Number must be a positive number")
       .integer("Must be an integer"),
-    driverLicense: Yup.number()
-      .required("Driver's ID number is required")
-      .positive("Must be a positive number")
-      .integer("Must be an Integer"),
   });
 
   return (
     <div className="SignupFather">
       <Formik
         initialValues={{
-          name: "",
+          firstname: "",
+          lastname: "",
           email: "",
-          lesseID: "",
-          driverLicense: "",
+          phoneNumber: "",
           password: "",
           conpassword: "",
         }}
@@ -84,29 +81,33 @@ function Signup() {
                 </label>
                 <Field
                   type="text"
-                  name="name"
-                  placeholder="Enter Your Name"
+                  name="firstname"
+                  placeholder="Enter Your First Name"
                   className="name"
-                  value={values.name}
+                  value={values.firstname}
                   onChange={handleChange}
                 />
-                <ErrorMessage name="name" component="div" className="error" />
+                <ErrorMessage
+                  name="firstname"
+                  component="div"
+                  className="error"
+                />
               </div>
 
               <div className="SignUpInput">
                 <label>
-                  <HiIdentification />
+                  <FaUser />
                 </label>
                 <Field
-                  type="number"
-                  name="lesseID"
-                  placeholder="Enter Your National ID No"
+                  type="text"
+                  name="lastname"
+                  placeholder="Enter Your Last Name"
                   className="NationalID"
-                  value={values.lesseID}
+                  value={values.lastname}
                   onChange={handleChange}
                 />
                 <ErrorMessage
-                  name="lesseID"
+                  name="lastname"
                   component="div"
                   className="error"
                 />
@@ -133,14 +134,14 @@ function Signup() {
                 </label>
                 <Field
                   type="number"
-                  name="driverLicense"
-                  placeholder="Enter Your Driver License No"
+                  name="phoneNumber"
+                  placeholder="Enter Your Phone Number"
                   className="driverLicense"
                   value={values.driverLicense}
                   onChange={handleChange}
                 />
                 <ErrorMessage
-                  name="driverLicense"
+                  name="phoneNumber"
                   component="div"
                   className="error"
                 />
@@ -189,12 +190,13 @@ function Signup() {
                   disabled={isSubmitting}
                   className="Signbtn"
                 >
-                  SignUp
+                  {loading ? "Please wait..." : "Sign Up"}
                 </button>
               </div>
             </div>
             <p className="loginPara">
-              If You have an account click <a href="/Login">Login</a> to continue
+              If You have an account click <a href="/Login">Login</a> to
+              continue
             </p>
           </Form>
         )}
