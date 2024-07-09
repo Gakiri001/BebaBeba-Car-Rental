@@ -66,3 +66,34 @@ export const loginUser = async (req,res) => {
     res.status(500).json({success:false, message:err.message})
   }
 }
+
+
+export const getUsers = async (req, res) => {
+  try {
+    const users = await prisma.usersign.findMany();
+    res.status(200).json({ success: true, users });
+  } catch (error) {
+    res.status(500).json({ success: false, message: "An error occurred" });
+  }
+};
+
+
+export const deleteUser = async (req, res) => {
+  const  id  = req.params.id;
+  try {
+    const delectUserInfo = await prisma.usersign.delete({
+      where: { id: id },
+      select:{
+        firstname: true,
+        lastname: true,
+        email: true,
+        phoneNumber: true,
+        password: true,
+        id:true
+      }
+    });
+    res.status(200).json(delectUserInfo);
+  } catch (error) {
+    res.status(500).json({ success: false, message: "An error occurred" });
+  }
+};

@@ -9,23 +9,29 @@ import Contact from "./Pages/Contacts/Contact";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import Pay from "./Pages/Pay/Pay";
+import Admin from "./Pages/Admin/Admin";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Signup />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Listing" element={<Listing />} />
-          <Route path="/Reservation" element={<Reservation />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Signup" element={<Signup />} />
-          <Route path="/Pay" element={<Pay />} />
-        </Routes>
-        <Footer />
+        <AuthProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Signup />} />
+            <Route path="/Home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+            <Route path="/Listing" element={<ProtectedRoute><Listing /></ProtectedRoute>} />
+            <Route path="/Reservation" element={<ProtectedRoute><Reservation /></ProtectedRoute>} />
+            <Route path="/Contact" element={<ProtectedRoute><Contact /></ProtectedRoute>} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Signup" element={<Signup />} />
+            <Route path="/Pay" element={<ProtectedRoute><Pay /></ProtectedRoute>} />
+            <Route path="/Admin" element={<Admin />} />
+          </Routes>
+          <Footer />
+        </AuthProvider>
       </BrowserRouter>
     </>
   );

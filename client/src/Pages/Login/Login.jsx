@@ -1,22 +1,24 @@
 import React, { useState } from "react";
-import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./Login.css";
-import { FaEnvelope } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa";
 import { GiPadlock } from "react-icons/gi";
-import { apiurl } from "../../utils/congig";
+import { apiurl } from "../../utils/congig"; // Ensure the path is correct
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (formValues) => {
     try {
       setLoading(true);
       setError(false);
-      const reponse = await fetch(`${apiurl}/api/users/login/`, {
+      const response = await fetch(`${apiurl}/api/users/login/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -25,26 +27,29 @@ function Login() {
         credentials: "include",
       });
 
-      const data = await reponse.json();
+      const data = await response.json();
       console.log(data);
 
-      if (reponse.ok) {
+      if (response.ok) {
+        login();
         navigate("/Home");
       } else {
         setError(data.message || "Login Failed");
       }
     } catch (err) {
-      setError(e.message);
+      setError(err.message);
     } finally {
       setLoading(false);
     }
   };
+
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Invalid Email Address")
       .required("The Email is required"),
     password: Yup.string().required("The password is required"),
   });
+
   return (
     <div className="LogIn">
       <Formik
@@ -67,7 +72,7 @@ function Login() {
                 <Field
                   type="email"
                   name="email"
-                  placeHolder="Your Your Email Address"
+                  placeholder="Your Email Address"
                   className="email"
                   value={values.email}
                   onChange={handleChange}
@@ -82,16 +87,12 @@ function Login() {
                 <Field
                   type="password"
                   name="password"
-                  placeHolder="Enter Your password"
+                  placeholder="Enter Your password"
                   className="password"
                   value={values.password}
                   onChange={handleChange}
                 />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className="error"
-                />
+                <ErrorMessage name="password" component="div" className="error" />
               </div>
 
               <div className="LoginDiv">
@@ -104,6 +105,7 @@ function Login() {
                 </button>
               </div>
             </div>
+            {error && <p className="error">{error}</p>}
             <p className="loginPara">
               Lost password <a href="/Signup">Click Here</a>
             </p>
