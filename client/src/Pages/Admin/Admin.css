@@ -59,7 +59,6 @@ section div a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
   background: var(--color2);
   flex-direction: column;
   row-gap: 2rem;

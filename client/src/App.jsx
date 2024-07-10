@@ -15,6 +15,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import SignUpAdmin from "./Pages/Admin/SignUpAdmin";
 import ContactAdmin from "./Pages/Admin/ContactAdmin";
 import ReservationAdmin from "./Pages/Admin/ReservationAdmin";
+import Addcar from "./Pages/Admin/Addcar";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/SignUpAdmin" element={<SignUpAdmin />} />
             <Route path="/ContactAdmin" element={<ContactAdmin />} />
             <Route path="/ReservationAdmin" element={<ReservationAdmin />} />
+            <Route path="/Addcar" element={<Addcar />} />
           </Routes>
           <Footer />
         </AuthProvider>

@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/carlogo.jpeg";
 import "./Header.css";
+import { useAuth } from "../../context/AuthContext";
 
 function Header() {
+  const {user, logout} = useAuth()
   return (
     <div className="Header">
       <div className="HeaderLeft">
@@ -33,7 +35,14 @@ function Header() {
         </ul>
       </div>
       <div className="HeaderButtons">
-        {/* <button>
+        {/* {user ? (
+          <>
+          <li><Link to="/">Profile</Link></li>
+          <li><Link to="/">Logout</Link></li>
+          </>
+        ) : (
+          <>
+             <button>
           <Link className="Login" to="/Login">
             Log In
           </Link>
@@ -42,7 +51,14 @@ function Header() {
           <Link className="Signup" to="/Signup">
             Sign Up
           </Link>
-        </button> */}
+        </button>
+          </>
+       
+        )
+
+        } */}
+
+        
 
         <h2>Welcome To BebaBeba</h2>
       </div>

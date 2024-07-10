@@ -4,7 +4,7 @@ import React from "react";
 
 const Testmoy = ({ image, name, heading, description }) => {
   return (
-    <section className="testmoy">
+    <div className="testmoy">
       <div className="testmoyTop">
         <div className="testmoyTopimage">
           <img src={image} alt="" />
@@ -20,16 +20,16 @@ const Testmoy = ({ image, name, heading, description }) => {
         <h2>{heading}</h2>
         <p>{description}</p>
       </div>
-    </section>
+    </div>
   );
 };
 
 function Testimonials() {
   return (
     <React.Fragment>
-      <section className="Testimonials">
+      <div className="Testimonials">
         <h1>Testimonials</h1>
-        <section className="TestimonialsWrapper">
+        <div className="TestimonialsWrapper">
           {testimonials.map((currentTestmony, i) => (
             <Testmoy
               key={i}
@@ -40,8 +40,8 @@ function Testimonials() {
               description={currentTestmony.description}
             />
           ))}
-        </section>
-      </section>
+        </div>
+      </div>
     </React.Fragment>
   );
 }

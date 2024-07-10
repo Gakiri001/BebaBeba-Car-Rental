@@ -1,8 +1,7 @@
 import express from "express";
 import { config } from "dotenv";
 import usersRouter from "./routes/users.routes.js";
-import reserveRouter from "./routes/reservation.routes.js";
-import lesseeRouter from "./routes/lessee.routes.js"
+// import reserveRouter from "./routes/reservation.routes.js";
 import rentRouter from "./routes/rent.routes.js"
 import ContactRouter from "./routes/contact.routes.js"
 import cors from "cors";
@@ -23,8 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/api/users", usersRouter);
-app.use("/api/reserve", reserveRouter);
-app.use("/api/lessee/",lesseeRouter)
+// app.use("/api/reserve", reserveRouter);
 app.use("/api/rent/", rentRouter)
 app.use("/api/subject/", ContactRouter)
 
