@@ -2,14 +2,21 @@ import React from 'react'
 import ContactAdmin from './ContactAdmin'
 import SignUpAdmin from './SignUpAdmin'
 import ReservationAdmin from './ReservationAdmin'
+import "./Admin.css"
 
 function Admin() {
   return (
-    <>
-        <ContactAdmin />
+    <section>
+    <div>
+    <h1>ADMIN PAGE</h1>
+    <a href="/SignUpAdmin">Users Accounts</a>
+    <a href="/ReservationAdmin">Reservation Details</a>
+    <a href="/ContactAdmin">Feedback from the Clients</a>
+    </div>
+        {/* <ContactAdmin />
         <SignUpAdmin />
-        <ReservationAdmin />
-    </>
+        <ReservationAdmin /> */}
+    </section>
 
   )
 }

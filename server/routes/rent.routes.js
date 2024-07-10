@@ -9,6 +9,6 @@ router.post("/register", validateInformation, createRent)
 
 router.get("/register",getReservation)
 
-router.delete("/register", deleteReseve)
+router.delete("/register/:id", deleteReseve)
 
 export default router

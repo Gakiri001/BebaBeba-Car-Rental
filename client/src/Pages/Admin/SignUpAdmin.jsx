@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { apiurl } from "../../utils/congig";
+import "./Admin.css"
 
 function SignUpAdmin() {
   const [signup, setSignup] = useState([]);
@@ -49,8 +50,8 @@ function SignUpAdmin() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
-      <h1>SignUpAdmin</h1>
+    <div className="body">
+      <h1>BebaBeba Users</h1>
       <table>
         <thead>
           <tr>

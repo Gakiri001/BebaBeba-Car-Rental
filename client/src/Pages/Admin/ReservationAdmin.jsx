@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import { apiurl } from "../../utils/congig";
+import "./Admin.css"
 
 function ReservationAdmin() {
   const [reserve, setReserve] = useState([])
@@ -34,7 +35,7 @@ function ReservationAdmin() {
   const handleDelete = async (id) => {
     try{
       const response = await fetch(`${apiurl}/api/rent/register/${id}`, {
-        method: "DELETE"
+        method: "DELETE",
       })
       const data = await response.json()
 
@@ -55,8 +56,8 @@ function ReservationAdmin() {
   if(error) return <div>Error...</div>
 
   return (
-    <div>
-      <h1>ReservationAdmin</h1>
+    <div className="body">
+      <h1>Reservation Details</h1>
       <table>
         <thead>
           <tr>
@@ -83,7 +84,7 @@ function ReservationAdmin() {
               <td>{current.driverLicense}</td>
               <td>{current.reason}</td>
               <td>
-                <button onClick={() => handleDelete(register.id)}>Delete</button>
+                <button onClick={() => handleDelete(current.id)}>Delete</button>
               </td>
             </tr>
           ))}

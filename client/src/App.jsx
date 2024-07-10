@@ -12,6 +12,9 @@ import Pay from "./Pages/Pay/Pay";
 import Admin from "./Pages/Admin/Admin";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import SignUpAdmin from "./Pages/Admin/SignUpAdmin";
+import ContactAdmin from "./Pages/Admin/ContactAdmin";
+import ReservationAdmin from "./Pages/Admin/ReservationAdmin";
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
             <Route path="/Signup" element={<Signup />} />
             <Route path="/Pay" element={<ProtectedRoute><Pay /></ProtectedRoute>} />
             <Route path="/Admin" element={<Admin />} />
+            <Route path="/SignUpAdmin" element={<SignUpAdmin />} />
+            <Route path="/ContactAdmin" element={<ContactAdmin />} />
+            <Route path="/ReservationAdmin" element={<ReservationAdmin />} />
           </Routes>
           <Footer />
         </AuthProvider>

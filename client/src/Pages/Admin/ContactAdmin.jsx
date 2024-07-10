@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { apiurl } from "../../utils/congig";
+import "./Admin.css"
 
-function AdminPage() {
+function ContactAdmin() {
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -73,8 +74,8 @@ function AdminPage() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
-      <h1>Contact Submissions</h1>
+    <div className="body">
+      <h1>User Feedback and Review</h1>
       <table>
         <thead>
           <tr>
@@ -140,4 +141,4 @@ function AdminPage() {
   );
 }
 
-export default AdminPage;
+export default ContactAdmin;
